@@ -734,7 +734,6 @@ func (c *conn) getAck() stateType {
 	sAddr, err := c.readFromNet()
 	if err != nil {
 		c.log.trace("Error waiting for ACK: %v", err)
-		c.err = wrapError(err, "waiting for ACK")
 		return c.getAck
 	}
 
